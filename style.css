@@ -1,0 +1,139 @@
+:root {
+    --moderate-violet: 263 55% 52%;
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: 0 0% 100%;
+    --light-gray: hsl(0, 0%, 81%);
+    --very-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: var(--very-light-grayish-blue);
+}
+
+img {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+
+
+main {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 70rem;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.profile p {
+    opacity: 0.5;
+}
+
+.profile img {
+    border-radius: 50%;
+}
+
+.card.daniel, .card.patrick {
+    grid-column: span 2;
+    color: hsl(var(--white));
+
+}
+
+.card.daniel {
+    background-color: hsl(var(--moderate-violet));
+    color: hsl(var(--white));
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+}
+
+.card.jonathan {
+    background-color: var(--very-dark-grayish-blue);
+    color: hsl(var(--white));
+}
+
+.card.kira, .card.jeanette {
+    background-color: hsl(var(--white));
+    color:hsl(217, 19%, 35%);
+}
+
+.card.patrick {
+    background-color: var(--very-dark-blackish-blue);
+    color: hsl(var(--white));
+}
+
+.card.daniel img {
+    border: 2px solid hsl(var(--white) / 0.5);
+
+}
+
+.card.patrick img {
+    border: 2px solid hsl(var(--moderate-violet) / 0.5);
+}
+
+
+
+.card.kira {
+    grid-row: -1 / span 2;
+    grid-column: 4;
+}
+
+.quote {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.testimonial {
+    opacity: 0.7;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+@media (max-width: 1025px) {
+    body {
+        padding: 4.5rem 1.5rem;
+    }
+    main {
+        grid-template-columns: 1fr;
+    }
+    .card.daniel, .card.patrick {
+        grid-column: span 1;
+    }
+
+    .card.kira {
+        grid-row: span 1;
+        grid-column: 1;
+    }
+}
